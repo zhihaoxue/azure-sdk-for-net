@@ -142,7 +142,7 @@ namespace Azure.Core.TestFramework
 
                 if (Mode == RecordedTestMode.Playback)
                 {
-                    _credential = new TestCredential();
+                    _credential = new MockCredential();
                 }
                 else
                 {
@@ -249,34 +249,6 @@ namespace Azure.Core.TestFramework
             }
 
             return _recording.GetVariable(name, null);
-        }
-
-        private void SetRecordedValue(string name, string value)
-        {
-            if (!Mode.HasValue)
-            {
-                return;
-            }
-
-            if (_recording == null)
-            {
-                throw new InvalidOperationException("Recorded value should not be set outside the test method invocation");
-            }
-
-            _recording?.SetVariable(name, value);
-        }
-
-        private class TestCredential : TokenCredential
-        {
-            public override ValueTask<AccessToken> GetTokenAsync(TokenRequestContext requestContext, CancellationToken cancellationToken)
-            {
-                return new ValueTask<AccessToken>(GetToken(requestContext, cancellationToken));
-            }
-
-            public override AccessToken GetToken(TokenRequestContext requestContext, CancellationToken cancellationToken)
-            {
-                return new AccessToken("TEST TOKEN " + string.Join(" ", requestContext.Scopes), DateTimeOffset.MaxValue);
-            }
         }
     }
 }
