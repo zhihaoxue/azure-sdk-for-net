@@ -250,5 +250,19 @@ namespace Azure.Core.TestFramework
 
             return _recording.GetVariable(name, null);
         }
+        private void SetRecordedValue(string name, string value)
+        {
+            if (!Mode.HasValue)
+            {
+                return;
+            }
+
+            if (_recording == null)
+            {
+                throw new InvalidOperationException("Recorded value should not be set outside the test method invocation");
+            }
+
+            _recording?.SetVariable(name, value);
+        }
     }
 }
