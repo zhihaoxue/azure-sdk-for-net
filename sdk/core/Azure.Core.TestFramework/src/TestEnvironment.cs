@@ -193,12 +193,16 @@ namespace Azure.Core.TestFramework
             var prefixedName = _prefix + name;
 
             // Environment variables override the environment file
-            var value = Environment.GetEnvironmentVariable(prefixedName) ??
-                        Environment.GetEnvironmentVariable(name);
+            var value = Environment.GetEnvironmentVariable(prefixedName);
 
             if (value == null)
             {
                 _environmentFile.TryGetValue(prefixedName, out value);
+            }
+
+            if (value == null)
+            {
+                value = Environment.GetEnvironmentVariable(name);
             }
 
             if (value == null)
