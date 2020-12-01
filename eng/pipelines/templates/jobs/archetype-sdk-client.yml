@@ -52,6 +52,7 @@ jobs:
           Artifacts: ${{parameters.Artifacts}}
           DocGenerationDir: "$(Build.SourcesDirectory)/doc/ApiDocGeneration"
           LibType: 'client'
+          WarningsNotAsErrors: ${{ parameters.WarningsNotAsErrors}}
       - task: PublishPipelineArtifact@1
         condition: succeeded()
         inputs:
