@@ -45,6 +45,7 @@ stages:
         TestPipeline: ${{ parameters.TestPipeline }}
         ArtifactName: packages
         TestSetupSteps: ${{ parameters.TestSetupSteps }}
+        WarningsNotAsErrors: ${{ parameters.WarningsNotAsErrors }}
 
   # The Prerelease and Release stages are conditioned on whether we are building a pull request and the branch.
   - ${{if and(ne(variables['Build.Reason'], 'PullRequest'), eq(variables['System.TeamProject'], 'internal'))}}:
@@ -57,3 +58,4 @@ stages:
         ArtifactName: packages
         TargetDocRepoOwner: ${{ parameters.TargetDocRepoOwner }}
         TargetDocRepoName: ${{ parameters.TargetDocRepoName }} 
+        WarningsNotAsErrors: ${{ parameters.WarningsNotAsErrors }}
