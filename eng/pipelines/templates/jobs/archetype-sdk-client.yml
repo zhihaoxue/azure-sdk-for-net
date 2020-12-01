@@ -35,7 +35,7 @@ jobs:
           versionSpec: '3.6'
       - template: /eng/pipelines/templates/steps/install-dotnet.yml
       - script: >-
-          dotnet pack eng/service.proj -warnaserror
+          dotnet pack eng/service.proj -warnaserror${{ parameters.WarningsNotAsErrors}}
           /p:ServiceDirectory=${{ parameters.ServiceDirectory }}
           /p:IncludeTests=false
           /p:PublicSign=false $(VersioningProperties)

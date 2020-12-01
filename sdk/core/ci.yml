@@ -32,6 +32,7 @@ pr:
 extends:
   template: ../../eng/pipelines/templates/stages/archetype-sdk-client.yml
   parameters:
+    WarningsNotAsErrors: '-IDT003'
     ServiceDirectory: core
     ServiceToTest: '*'
     ArtifactName: packages
