@@ -30,6 +30,9 @@ parameters:
 - name: TestSetupSteps
   type: stepList
   default: []
+- name: WarningsNotAsErrors
+  type: string
+  default: ''
 
 stages:
   - stage: Build
