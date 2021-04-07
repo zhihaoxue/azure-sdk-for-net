@@ -4,11 +4,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Azure.WebJobs" />
+    <Compile Remove="Shared\**\*.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Shared\**\*.cs" />
+    <PackageReference Include="Microsoft.Azure.WebJobs" />
   </ItemGroup>
 
   <ItemGroup>
