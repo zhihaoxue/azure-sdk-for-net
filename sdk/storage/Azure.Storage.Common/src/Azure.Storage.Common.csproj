@@ -20,7 +20,6 @@
   <PropertyGroup>
     <!-- Force a project reference until core ship -->
     <UseProjectReferenceToAzureClients>true</UseProjectReferenceToAzureClients>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Azure.Core" />

@@ -25,6 +25,5 @@
 
   <PropertyGroup>
     <DefineConstants>STORAGE_WEBJOBS_PUBLIC_QUEUE_PROCESSOR</DefineConstants>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 </Project>
