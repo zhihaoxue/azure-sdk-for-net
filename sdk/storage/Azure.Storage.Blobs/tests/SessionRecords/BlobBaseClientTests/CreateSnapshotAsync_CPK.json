@@ -1,4 +1,4 @@
-﻿{
+{
   "Entries": [
     {
       "RequestUri": "https://seanmcccanary3.blob.core.windows.net/test-container-ac3851f0-0404-6f30-15d7-81283f7471bf?restype=container",
@@ -22,7 +22,7 @@
       "ResponseHeaders": {
         "Content-Length": "0",
         "Date": "Wed, 17 Feb 2021 02:04:35 GMT",
-        "ETag": "\"0x8D8D2E8604B76B1\"",
+        "ETag": "\u00220x8D8D2E8604B76B1\u0022",
         "Last-Modified": "Wed, 17 Feb 2021 02:04:36 GMT",
         "Server": [
           "Windows-Azure-Blob/1.0",
@@ -50,7 +50,7 @@
         "x-ms-client-request-id": "e5a02329-2c2d-4310-2659-f075f6752e20",
         "x-ms-date": "Wed, 17 Feb 2021 02:04:36 GMT",
         "x-ms-encryption-algorithm": "AES256",
-        "x-ms-encryption-key": "wOG3mmU2Vf08oVhRwLhgq5ZWXh6+fLpeqfBA388b1ao=",
+        "x-ms-encryption-key": "Sanitized",
         "x-ms-encryption-key-sha256": "2P7qyRY87GaJMAmuIsBzKaP2TVfZBod/2uWVNTT7XmM=",
         "x-ms-return-client-request-id": "true",
         "x-ms-version": "2020-10-02"
@@ -60,7 +60,7 @@
       "ResponseHeaders": {
         "Content-Length": "0",
         "Date": "Wed, 17 Feb 2021 02:04:36 GMT",
-        "ETag": "\"0x8D8D2E860576656\"",
+        "ETag": "\u00220x8D8D2E860576656\u0022",
         "Last-Modified": "Wed, 17 Feb 2021 02:04:36 GMT",
         "Server": [
           "Windows-Azure-Blob/1.0",
@@ -89,7 +89,7 @@
         "x-ms-client-request-id": "abb6fe92-f07a-0a7c-329a-451faa97173c",
         "x-ms-date": "Wed, 17 Feb 2021 02:04:36 GMT",
         "x-ms-encryption-algorithm": "AES256",
-        "x-ms-encryption-key": "wOG3mmU2Vf08oVhRwLhgq5ZWXh6+fLpeqfBA388b1ao=",
+        "x-ms-encryption-key": "Sanitized",
         "x-ms-encryption-key-sha256": "2P7qyRY87GaJMAmuIsBzKaP2TVfZBod/2uWVNTT7XmM=",
         "x-ms-return-client-request-id": "true",
         "x-ms-version": "2020-10-02"
@@ -99,7 +99,7 @@
       "ResponseHeaders": {
         "Content-Length": "0",
         "Date": "Wed, 17 Feb 2021 02:04:36 GMT",
-        "ETag": "\"0x8D8D2E860576656\"",
+        "ETag": "\u00220x8D8D2E860576656\u0022",
         "Last-Modified": "Wed, 17 Feb 2021 02:04:36 GMT",
         "Server": [
           "Windows-Azure-Blob/1.0",

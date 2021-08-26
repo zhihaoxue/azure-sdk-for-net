@@ -1,4 +1,4 @@
-﻿{
+{
   "Entries": [
     {
       "RequestUri": "https://seanmcccanary3.blob.core.windows.net/test-container-4a523adf-cbe2-708d-8605-f3ed00fd8d1c?restype=container",
@@ -22,7 +22,7 @@
       "ResponseHeaders": {
         "Content-Length": "0",
         "Date": "Wed, 17 Feb 2021 01:59:49 GMT",
-        "ETag": "\"0x8D8D2E7B5BEDBC3\"",
+        "ETag": "\u00220x8D8D2E7B5BEDBC3\u0022",
         "Last-Modified": "Wed, 17 Feb 2021 01:59:50 GMT",
         "Server": [
           "Windows-Azure-Blob/1.0",
@@ -49,7 +49,7 @@
         "x-ms-client-request-id": "aedfffd9-1057-18b7-c246-bf7dacc971a7",
         "x-ms-date": "Wed, 17 Feb 2021 01:59:50 GMT",
         "x-ms-encryption-algorithm": "AES256",
-        "x-ms-encryption-key": "BwdL/HKkELRXsp2xQ8fqztcDKlBa70QEPfT4R0KwcZY=",
+        "x-ms-encryption-key": "Sanitized",
         "x-ms-encryption-key-sha256": "cBPXWWIIPQdEhWNrxOwx9C8yWyWcvx5OvMagQP5il2g=",
         "x-ms-return-client-request-id": "true",
         "x-ms-version": "2020-10-02"
@@ -59,7 +59,7 @@
       "ResponseHeaders": {
         "Content-Length": "0",
         "Date": "Wed, 17 Feb 2021 01:59:49 GMT",
-        "ETag": "\"0x8D8D2E7B5CFB7CB\"",
+        "ETag": "\u00220x8D8D2E7B5CFB7CB\u0022",
         "Last-Modified": "Wed, 17 Feb 2021 01:59:50 GMT",
         "Server": [
           "Windows-Azure-Blob/1.0",

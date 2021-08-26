@@ -1,4 +1,4 @@
-﻿{
+{
   "Entries": [
     {
       "RequestUri": "https://seanmcccanary3.blob.core.windows.net/test-container-8be9ebc9-74aa-ea32-a28d-98d2ef18eefc?restype=container",
@@ -22,7 +22,7 @@
       "ResponseHeaders": {
         "Content-Length": "0",
         "Date": "Wed, 17 Feb 2021 02:10:26 GMT",
-        "ETag": "\"0x8D8D2E93104AC3A\"",
+        "ETag": "\u00220x8D8D2E93104AC3A\u0022",
         "Last-Modified": "Wed, 17 Feb 2021 02:10:26 GMT",
         "Server": [
           "Windows-Azure-Blob/1.0",
@@ -50,7 +50,7 @@
         "x-ms-client-request-id": "6a1f5197-f40a-4568-4565-2d53cabd65bd",
         "x-ms-date": "Wed, 17 Feb 2021 02:10:26 GMT",
         "x-ms-encryption-algorithm": "AES256",
-        "x-ms-encryption-key": "rk+V9IvUFzh0XZzpQc/z/m80Yq3YaAkvxzcKWdO3xV8=",
+        "x-ms-encryption-key": "Sanitized",
         "x-ms-encryption-key-sha256": "QjGbs/Lwf8Qn7U/P4Z5B/YYNtRGFQ1meudu8wwdOSTQ=",
         "x-ms-return-client-request-id": "true",
         "x-ms-version": "2020-10-02"
@@ -60,7 +60,7 @@
       "ResponseHeaders": {
         "Content-Length": "0",
         "Date": "Wed, 17 Feb 2021 02:10:26 GMT",
-        "ETag": "\"0x8D8D2E9311265F2\"",
+        "ETag": "\u00220x8D8D2E9311265F2\u0022",
         "Last-Modified": "Wed, 17 Feb 2021 02:10:26 GMT",
         "Server": [
           "Windows-Azure-Blob/1.0",
@@ -89,7 +89,7 @@
         "x-ms-client-request-id": "81c2cb25-5a97-ed54-8a19-d6418ac0c4c5",
         "x-ms-date": "Wed, 17 Feb 2021 02:10:26 GMT",
         "x-ms-encryption-algorithm": "AES256",
-        "x-ms-encryption-key": "rk+V9IvUFzh0XZzpQc/z/m80Yq3YaAkvxzcKWdO3xV8=",
+        "x-ms-encryption-key": "Sanitized",
         "x-ms-encryption-key-sha256": "QjGbs/Lwf8Qn7U/P4Z5B/YYNtRGFQ1meudu8wwdOSTQ=",
         "x-ms-return-client-request-id": "true",
         "x-ms-version": "2020-10-02"
@@ -101,7 +101,7 @@
         "Content-Length": "0",
         "Content-Type": "application/octet-stream",
         "Date": "Wed, 17 Feb 2021 02:10:26 GMT",
-        "ETag": "\"0x8D8D2E9311265F2\"",
+        "ETag": "\u00220x8D8D2E9311265F2\u0022",
         "Last-Modified": "Wed, 17 Feb 2021 02:10:26 GMT",
         "Server": [
           "Windows-Azure-Blob/1.0",
