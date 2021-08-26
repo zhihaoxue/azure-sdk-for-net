@@ -13,8 +13,6 @@ namespace Microsoft.Azure.Management.Network.Models
     using Microsoft.Rest;
     using Microsoft.Rest.Serialization;
     using Newtonsoft.Json;
-    using System.Collections;
-    using System.Collections.Generic;
     using System.Linq;
 
     /// <summary>
@@ -47,9 +45,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="backendAddressPool">A reference to a pool of DIPs.
         /// Inbound traffic is randomly load balanced across IPs in the backend
         /// IPs.</param>
-        /// <param name="backendAddressPools">An array of references to pool of
-        /// DIPs.</param>
-        /// <param name="probe">The reference to the load balancer probe used
+        /// <param name="probe">The reference of the load balancer probe used
         /// by the load balancing rule.</param>
         /// <param name="loadDistribution">The load distribution policy for
         /// this rule. Possible values include: 'Default', 'SourceIP',
@@ -72,21 +68,20 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="disableOutboundSnat">Configures SNAT for the VMs in
         /// the backend pool to use the publicIP address specified in the
         /// frontend of the load balancing rule.</param>
-        /// <param name="provisioningState">The provisioning state of the load
-        /// balancing rule resource. Possible values include: 'Succeeded',
-        /// 'Updating', 'Deleting', 'Failed'</param>
+        /// <param name="provisioningState">Gets the provisioning state of the
+        /// PublicIP resource. Possible values are: 'Updating', 'Deleting', and
+        /// 'Failed'.</param>
         /// <param name="name">The name of the resource that is unique within
         /// the set of load balancing rules used by the load balancer. This
         /// name can be used to access the resource.</param>
         /// <param name="etag">A unique read-only string that changes whenever
         /// the resource is updated.</param>
         /// <param name="type">Type of the resource.</param>
-        public LoadBalancingRule(string protocol, int frontendPort, string id = default(string), SubResource frontendIPConfiguration = default(SubResource), SubResource backendAddressPool = default(SubResource), IList<SubResource> backendAddressPools = default(IList<SubResource>), SubResource probe = default(SubResource), string loadDistribution = default(string), int? backendPort = default(int?), int? idleTimeoutInMinutes = default(int?), bool? enableFloatingIP = default(bool?), bool? enableTcpReset = default(bool?), bool? disableOutboundSnat = default(bool?), string provisioningState = default(string), string name = default(string), string etag = default(string), string type = default(string))
+        public LoadBalancingRule(string protocol, int frontendPort, string id = default(string), SubResource frontendIPConfiguration = default(SubResource), SubResource backendAddressPool = default(SubResource), SubResource probe = default(SubResource), string loadDistribution = default(string), int? backendPort = default(int?), int? idleTimeoutInMinutes = default(int?), bool? enableFloatingIP = default(bool?), bool? enableTcpReset = default(bool?), bool? disableOutboundSnat = default(bool?), string provisioningState = default(string), string name = default(string), string etag = default(string), string type = default(string))
             : base(id)
         {
             FrontendIPConfiguration = frontendIPConfiguration;
             BackendAddressPool = backendAddressPool;
-            BackendAddressPools = backendAddressPools;
             Probe = probe;
             Protocol = protocol;
             LoadDistribution = loadDistribution;
@@ -122,13 +117,7 @@ namespace Microsoft.Azure.Management.Network.Models
         public SubResource BackendAddressPool { get; set; }
 
         /// <summary>
-        /// Gets or sets an array of references to pool of DIPs.
-        /// </summary>
-        [JsonProperty(PropertyName = "properties.backendAddressPools")]
-        public IList<SubResource> BackendAddressPools { get; set; }
-
-        /// <summary>
-        /// Gets or sets the reference to the load balancer probe used by the
+        /// Gets or sets the reference of the load balancer probe used by the
         /// load balancing rule.
         /// </summary>
         [JsonProperty(PropertyName = "properties.probe")]
@@ -200,12 +189,11 @@ namespace Microsoft.Azure.Management.Network.Models
         public bool? DisableOutboundSnat { get; set; }
 
         /// <summary>
-        /// Gets the provisioning state of the load balancing rule resource.
-        /// Possible values include: 'Succeeded', 'Updating', 'Deleting',
-        /// 'Failed'
+        /// Gets the provisioning state of the PublicIP resource. Possible
+        /// values are: 'Updating', 'Deleting', and 'Failed'.
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
-        public string ProvisioningState { get; private set; }
+        public string ProvisioningState { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the resource that is unique within the set
@@ -216,11 +204,11 @@ namespace Microsoft.Azure.Management.Network.Models
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets a unique read-only string that changes whenever the resource
-        /// is updated.
+        /// Gets or sets a unique read-only string that changes whenever the
+        /// resource is updated.
         /// </summary>
         [JsonProperty(PropertyName = "etag")]
-        public string Etag { get; private set; }
+        public string Etag { get; set; }
 
         /// <summary>
         /// Gets type of the resource.

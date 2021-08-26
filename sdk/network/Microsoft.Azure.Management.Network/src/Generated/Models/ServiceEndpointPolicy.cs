@@ -47,13 +47,11 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="resourceGuid">The resource GUID property of the
         /// service endpoint policy resource.</param>
         /// <param name="provisioningState">The provisioning state of the
-        /// service endpoint policy resource. Possible values include:
-        /// 'Succeeded', 'Updating', 'Deleting', 'Failed'</param>
+        /// service endpoint policy. Possible values are: 'Updating',
+        /// 'Deleting', and 'Failed'.</param>
         /// <param name="etag">A unique read-only string that changes whenever
         /// the resource is updated.</param>
-        /// <param name="kind">Kind of service endpoint policy. This is
-        /// metadata used for the Azure portal experience.</param>
-        public ServiceEndpointPolicy(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), IList<ServiceEndpointPolicyDefinition> serviceEndpointPolicyDefinitions = default(IList<ServiceEndpointPolicyDefinition>), IList<Subnet> subnets = default(IList<Subnet>), string resourceGuid = default(string), string provisioningState = default(string), string etag = default(string), string kind = default(string))
+        public ServiceEndpointPolicy(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), IList<ServiceEndpointPolicyDefinition> serviceEndpointPolicyDefinitions = default(IList<ServiceEndpointPolicyDefinition>), IList<Subnet> subnets = default(IList<Subnet>), string resourceGuid = default(string), string provisioningState = default(string), string etag = default(string))
             : base(id, name, type, location, tags)
         {
             ServiceEndpointPolicyDefinitions = serviceEndpointPolicyDefinitions;
@@ -61,7 +59,6 @@ namespace Microsoft.Azure.Management.Network.Models
             ResourceGuid = resourceGuid;
             ProvisioningState = provisioningState;
             Etag = etag;
-            Kind = kind;
             CustomInit();
         }
 
@@ -91,26 +88,18 @@ namespace Microsoft.Azure.Management.Network.Models
         public string ResourceGuid { get; private set; }
 
         /// <summary>
-        /// Gets the provisioning state of the service endpoint policy
-        /// resource. Possible values include: 'Succeeded', 'Updating',
-        /// 'Deleting', 'Failed'
+        /// Gets the provisioning state of the service endpoint policy.
+        /// Possible values are: 'Updating', 'Deleting', and 'Failed'.
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; private set; }
 
         /// <summary>
-        /// Gets a unique read-only string that changes whenever the resource
-        /// is updated.
+        /// Gets or sets a unique read-only string that changes whenever the
+        /// resource is updated.
         /// </summary>
         [JsonProperty(PropertyName = "etag")]
-        public string Etag { get; private set; }
-
-        /// <summary>
-        /// Gets kind of service endpoint policy. This is metadata used for the
-        /// Azure portal experience.
-        /// </summary>
-        [JsonProperty(PropertyName = "kind")]
-        public string Kind { get; private set; }
+        public string Etag { get; set; }
 
     }
 }

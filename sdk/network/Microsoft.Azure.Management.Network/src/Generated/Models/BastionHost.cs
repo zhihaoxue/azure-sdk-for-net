@@ -44,19 +44,17 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="dnsName">FQDN for the endpoint on which bastion host
         /// is accessible.</param>
         /// <param name="provisioningState">The provisioning state of the
-        /// bastion host resource. Possible values include: 'Succeeded',
-        /// 'Updating', 'Deleting', 'Failed'</param>
-        /// <param name="etag">A unique read-only string that changes whenever
-        /// the resource is updated.</param>
-        /// <param name="sku">The sku of this Bastion Host.</param>
-        public BastionHost(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), IList<BastionHostIPConfiguration> ipConfigurations = default(IList<BastionHostIPConfiguration>), string dnsName = default(string), string provisioningState = default(string), string etag = default(string), Sku sku = default(Sku))
+        /// resource. Possible values include: 'Succeeded', 'Updating',
+        /// 'Deleting', 'Failed'</param>
+        /// <param name="etag">Gets a unique read-only string that changes
+        /// whenever the resource is updated.</param>
+        public BastionHost(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), IList<BastionHostIPConfiguration> ipConfigurations = default(IList<BastionHostIPConfiguration>), string dnsName = default(string), string provisioningState = default(string), string etag = default(string))
             : base(id, name, type, location, tags)
         {
             IpConfigurations = ipConfigurations;
             DnsName = dnsName;
             ProvisioningState = provisioningState;
             Etag = etag;
-            Sku = sku;
             CustomInit();
         }
 
@@ -79,11 +77,11 @@ namespace Microsoft.Azure.Management.Network.Models
         public string DnsName { get; set; }
 
         /// <summary>
-        /// Gets the provisioning state of the bastion host resource. Possible
+        /// Gets or sets the provisioning state of the resource. Possible
         /// values include: 'Succeeded', 'Updating', 'Deleting', 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
-        public string ProvisioningState { get; private set; }
+        public string ProvisioningState { get; set; }
 
         /// <summary>
         /// Gets a unique read-only string that changes whenever the resource
@@ -91,12 +89,6 @@ namespace Microsoft.Azure.Management.Network.Models
         /// </summary>
         [JsonProperty(PropertyName = "etag")]
         public string Etag { get; private set; }
-
-        /// <summary>
-        /// Gets or sets the sku of this Bastion Host.
-        /// </summary>
-        [JsonProperty(PropertyName = "sku")]
-        public Sku Sku { get; set; }
 
     }
 }

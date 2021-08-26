@@ -39,8 +39,6 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="type">Resource type.</param>
         /// <param name="location">Resource location.</param>
         /// <param name="tags">Resource tags.</param>
-        /// <param name="extendedLocation">The extended location of the load
-        /// balancer.</param>
         /// <param name="sku">The load balancer SKU.</param>
         /// <param name="frontendIPConfigurations">Object representing the
         /// frontend IPs to be used for the load balancer.</param>
@@ -70,15 +68,14 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="outboundRules">The outbound rules.</param>
         /// <param name="resourceGuid">The resource GUID property of the load
         /// balancer resource.</param>
-        /// <param name="provisioningState">The provisioning state of the load
-        /// balancer resource. Possible values include: 'Succeeded',
-        /// 'Updating', 'Deleting', 'Failed'</param>
+        /// <param name="provisioningState">Gets the provisioning state of the
+        /// PublicIP resource. Possible values are: 'Updating', 'Deleting', and
+        /// 'Failed'.</param>
         /// <param name="etag">A unique read-only string that changes whenever
         /// the resource is updated.</param>
-        public LoadBalancer(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), ExtendedLocation extendedLocation = default(ExtendedLocation), LoadBalancerSku sku = default(LoadBalancerSku), IList<FrontendIPConfiguration> frontendIPConfigurations = default(IList<FrontendIPConfiguration>), IList<BackendAddressPool> backendAddressPools = default(IList<BackendAddressPool>), IList<LoadBalancingRule> loadBalancingRules = default(IList<LoadBalancingRule>), IList<Probe> probes = default(IList<Probe>), IList<InboundNatRule> inboundNatRules = default(IList<InboundNatRule>), IList<InboundNatPool> inboundNatPools = default(IList<InboundNatPool>), IList<OutboundRule> outboundRules = default(IList<OutboundRule>), string resourceGuid = default(string), string provisioningState = default(string), string etag = default(string))
+        public LoadBalancer(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), LoadBalancerSku sku = default(LoadBalancerSku), IList<FrontendIPConfiguration> frontendIPConfigurations = default(IList<FrontendIPConfiguration>), IList<BackendAddressPool> backendAddressPools = default(IList<BackendAddressPool>), IList<LoadBalancingRule> loadBalancingRules = default(IList<LoadBalancingRule>), IList<Probe> probes = default(IList<Probe>), IList<InboundNatRule> inboundNatRules = default(IList<InboundNatRule>), IList<InboundNatPool> inboundNatPools = default(IList<InboundNatPool>), IList<OutboundRule> outboundRules = default(IList<OutboundRule>), string resourceGuid = default(string), string provisioningState = default(string), string etag = default(string))
             : base(id, name, type, location, tags)
         {
-            ExtendedLocation = extendedLocation;
             Sku = sku;
             FrontendIPConfigurations = frontendIPConfigurations;
             BackendAddressPools = backendAddressPools;
@@ -97,12 +94,6 @@ namespace Microsoft.Azure.Management.Network.Models
         /// An initialization method that performs custom operations like setting defaults
         /// </summary>
         partial void CustomInit();
-
-        /// <summary>
-        /// Gets or sets the extended location of the load balancer.
-        /// </summary>
-        [JsonProperty(PropertyName = "extendedLocation")]
-        public ExtendedLocation ExtendedLocation { get; set; }
 
         /// <summary>
         /// Gets or sets the load balancer SKU.
@@ -171,24 +162,25 @@ namespace Microsoft.Azure.Management.Network.Models
         public IList<OutboundRule> OutboundRules { get; set; }
 
         /// <summary>
-        /// Gets the resource GUID property of the load balancer resource.
+        /// Gets or sets the resource GUID property of the load balancer
+        /// resource.
         /// </summary>
         [JsonProperty(PropertyName = "properties.resourceGuid")]
-        public string ResourceGuid { get; private set; }
+        public string ResourceGuid { get; set; }
 
         /// <summary>
-        /// Gets the provisioning state of the load balancer resource. Possible
-        /// values include: 'Succeeded', 'Updating', 'Deleting', 'Failed'
+        /// Gets the provisioning state of the PublicIP resource. Possible
+        /// values are: 'Updating', 'Deleting', and 'Failed'.
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
-        public string ProvisioningState { get; private set; }
+        public string ProvisioningState { get; set; }
 
         /// <summary>
-        /// Gets a unique read-only string that changes whenever the resource
-        /// is updated.
+        /// Gets or sets a unique read-only string that changes whenever the
+        /// resource is updated.
         /// </summary>
         [JsonProperty(PropertyName = "etag")]
-        public string Etag { get; private set; }
+        public string Etag { get; set; }
 
     }
 }
