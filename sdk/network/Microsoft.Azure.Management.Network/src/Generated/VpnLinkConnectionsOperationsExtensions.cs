@@ -22,109 +22,6 @@ namespace Microsoft.Azure.Management.Network
     public static partial class VpnLinkConnectionsOperationsExtensions
     {
             /// <summary>
-            /// Resets the VpnLink connection specified.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='gatewayName'>
-            /// The name of the gateway.
-            /// </param>
-            /// <param name='connectionName'>
-            /// The name of the vpn connection.
-            /// </param>
-            /// <param name='linkConnectionName'>
-            /// The name of the vpn link connection.
-            /// </param>
-            public static void ResetConnection(this IVpnLinkConnectionsOperations operations, string resourceGroupName, string gatewayName, string connectionName, string linkConnectionName)
-            {
-                operations.ResetConnectionAsync(resourceGroupName, gatewayName, connectionName, linkConnectionName).GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// Resets the VpnLink connection specified.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='gatewayName'>
-            /// The name of the gateway.
-            /// </param>
-            /// <param name='connectionName'>
-            /// The name of the vpn connection.
-            /// </param>
-            /// <param name='linkConnectionName'>
-            /// The name of the vpn link connection.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task ResetConnectionAsync(this IVpnLinkConnectionsOperations operations, string resourceGroupName, string gatewayName, string connectionName, string linkConnectionName, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                (await operations.ResetConnectionWithHttpMessagesAsync(resourceGroupName, gatewayName, connectionName, linkConnectionName, null, cancellationToken).ConfigureAwait(false)).Dispose();
-            }
-
-            /// <summary>
-            /// Lists IKE Security Associations for Vpn Site Link Connection in the
-            /// specified resource group.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='gatewayName'>
-            /// The name of the gateway.
-            /// </param>
-            /// <param name='connectionName'>
-            /// The name of the vpn connection.
-            /// </param>
-            /// <param name='linkConnectionName'>
-            /// The name of the vpn link connection.
-            /// </param>
-            public static string GetIkeSas(this IVpnLinkConnectionsOperations operations, string resourceGroupName, string gatewayName, string connectionName, string linkConnectionName)
-            {
-                return operations.GetIkeSasAsync(resourceGroupName, gatewayName, connectionName, linkConnectionName).GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// Lists IKE Security Associations for Vpn Site Link Connection in the
-            /// specified resource group.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='gatewayName'>
-            /// The name of the gateway.
-            /// </param>
-            /// <param name='connectionName'>
-            /// The name of the vpn connection.
-            /// </param>
-            /// <param name='linkConnectionName'>
-            /// The name of the vpn link connection.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task<string> GetIkeSasAsync(this IVpnLinkConnectionsOperations operations, string resourceGroupName, string gatewayName, string connectionName, string linkConnectionName, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                using (var _result = await operations.GetIkeSasWithHttpMessagesAsync(resourceGroupName, gatewayName, connectionName, linkConnectionName, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
-            }
-
-            /// <summary>
             /// Retrieves all vpn site link connections for a particular virtual wan vpn
             /// gateway vpn connection.
             /// </summary>
@@ -132,7 +29,7 @@ namespace Microsoft.Azure.Management.Network
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The resource group name of the vpn gateway.
+            /// The resource group name of the VpnGateway.
             /// </param>
             /// <param name='gatewayName'>
             /// The name of the gateway.
@@ -153,7 +50,7 @@ namespace Microsoft.Azure.Management.Network
             /// The operations group for this extension method.
             /// </param>
             /// <param name='resourceGroupName'>
-            /// The resource group name of the vpn gateway.
+            /// The resource group name of the VpnGateway.
             /// </param>
             /// <param name='gatewayName'>
             /// The name of the gateway.
@@ -167,109 +64,6 @@ namespace Microsoft.Azure.Management.Network
             public static async Task<IPage<VpnSiteLinkConnection>> ListByVpnConnectionAsync(this IVpnLinkConnectionsOperations operations, string resourceGroupName, string gatewayName, string connectionName, CancellationToken cancellationToken = default(CancellationToken))
             {
                 using (var _result = await operations.ListByVpnConnectionWithHttpMessagesAsync(resourceGroupName, gatewayName, connectionName, null, cancellationToken).ConfigureAwait(false))
-                {
-                    return _result.Body;
-                }
-            }
-
-            /// <summary>
-            /// Resets the VpnLink connection specified.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='gatewayName'>
-            /// The name of the gateway.
-            /// </param>
-            /// <param name='connectionName'>
-            /// The name of the vpn connection.
-            /// </param>
-            /// <param name='linkConnectionName'>
-            /// The name of the vpn link connection.
-            /// </param>
-            public static void BeginResetConnection(this IVpnLinkConnectionsOperations operations, string resourceGroupName, string gatewayName, string connectionName, string linkConnectionName)
-            {
-                operations.BeginResetConnectionAsync(resourceGroupName, gatewayName, connectionName, linkConnectionName).GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// Resets the VpnLink connection specified.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='gatewayName'>
-            /// The name of the gateway.
-            /// </param>
-            /// <param name='connectionName'>
-            /// The name of the vpn connection.
-            /// </param>
-            /// <param name='linkConnectionName'>
-            /// The name of the vpn link connection.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task BeginResetConnectionAsync(this IVpnLinkConnectionsOperations operations, string resourceGroupName, string gatewayName, string connectionName, string linkConnectionName, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                (await operations.BeginResetConnectionWithHttpMessagesAsync(resourceGroupName, gatewayName, connectionName, linkConnectionName, null, cancellationToken).ConfigureAwait(false)).Dispose();
-            }
-
-            /// <summary>
-            /// Lists IKE Security Associations for Vpn Site Link Connection in the
-            /// specified resource group.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='gatewayName'>
-            /// The name of the gateway.
-            /// </param>
-            /// <param name='connectionName'>
-            /// The name of the vpn connection.
-            /// </param>
-            /// <param name='linkConnectionName'>
-            /// The name of the vpn link connection.
-            /// </param>
-            public static string BeginGetIkeSas(this IVpnLinkConnectionsOperations operations, string resourceGroupName, string gatewayName, string connectionName, string linkConnectionName)
-            {
-                return operations.BeginGetIkeSasAsync(resourceGroupName, gatewayName, connectionName, linkConnectionName).GetAwaiter().GetResult();
-            }
-
-            /// <summary>
-            /// Lists IKE Security Associations for Vpn Site Link Connection in the
-            /// specified resource group.
-            /// </summary>
-            /// <param name='operations'>
-            /// The operations group for this extension method.
-            /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='gatewayName'>
-            /// The name of the gateway.
-            /// </param>
-            /// <param name='connectionName'>
-            /// The name of the vpn connection.
-            /// </param>
-            /// <param name='linkConnectionName'>
-            /// The name of the vpn link connection.
-            /// </param>
-            /// <param name='cancellationToken'>
-            /// The cancellation token.
-            /// </param>
-            public static async Task<string> BeginGetIkeSasAsync(this IVpnLinkConnectionsOperations operations, string resourceGroupName, string gatewayName, string connectionName, string linkConnectionName, CancellationToken cancellationToken = default(CancellationToken))
-            {
-                using (var _result = await operations.BeginGetIkeSasWithHttpMessagesAsync(resourceGroupName, gatewayName, connectionName, linkConnectionName, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
