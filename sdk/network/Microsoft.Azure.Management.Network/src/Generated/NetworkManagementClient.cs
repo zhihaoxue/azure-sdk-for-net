@@ -299,11 +299,6 @@ namespace Microsoft.Azure.Management.Network
         public virtual IPacketCapturesOperations PacketCaptures { get; private set; }
 
         /// <summary>
-        /// Gets the IConnectionMonitorsOperations.
-        /// </summary>
-        public virtual IConnectionMonitorsOperations ConnectionMonitors { get; private set; }
-
-        /// <summary>
         /// Gets the IOperations.
         /// </summary>
         public virtual IOperations Operations { get; private set; }
@@ -773,7 +768,6 @@ namespace Microsoft.Azure.Management.Network
             DefaultSecurityRules = new DefaultSecurityRulesOperations(this);
             NetworkWatchers = new NetworkWatchersOperations(this);
             PacketCaptures = new PacketCapturesOperations(this);
-            ConnectionMonitors = new ConnectionMonitorsOperations(this);
             Operations = new Operations(this);
             PrivateEndpoints = new PrivateEndpointsOperations(this);
             AvailablePrivateEndpointTypes = new AvailablePrivateEndpointTypesOperations(this);

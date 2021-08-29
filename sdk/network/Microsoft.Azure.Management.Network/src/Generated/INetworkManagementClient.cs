@@ -296,11 +296,6 @@ namespace Microsoft.Azure.Management.Network
         IPacketCapturesOperations PacketCaptures { get; }
 
         /// <summary>
-        /// Gets the IConnectionMonitorsOperations.
-        /// </summary>
-        IConnectionMonitorsOperations ConnectionMonitors { get; }
-
-        /// <summary>
         /// Gets the IOperations.
         /// </summary>
         IOperations Operations { get; }
